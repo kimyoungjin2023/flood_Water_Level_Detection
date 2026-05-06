@@ -1,0 +1,9 @@
+/Human_keypointdetection/child_classification/UTKFace
+/Human_keypointdetection/child_classification/*.pth
+/Human_keypointdetection/child_classification/*.pt
+
+/Car_wheel_segmentation/.venv
+/Car_wheel_segmentation/datasets
+/Car_wheel_segmentation/runs
+
+/Car_wheel_segmentation/*.pt
