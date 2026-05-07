@@ -7,10 +7,10 @@ if __name__ == "__main__":
 
     # ── 학습 ──────────────────────────────────────────────────────────
     results = model.train(
-        data="datasets/data/data.yaml",  
-        epochs=500,
+        data="datasets/data.yaml",  
+        epochs=200,
         imgsz=640,
-        batch=2,                    # GPU 메모리 부족 시 8로 낮추기
+        batch=8,                    # GPU 메모리 부족 시 8로 낮추기
         device=0,                    # GPU 0번 사용 (CPU는 "cpu")
         project="runs",
         name="train",
