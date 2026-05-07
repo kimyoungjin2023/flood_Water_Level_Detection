@@ -1,9 +1,12 @@
 /Human_keypointdetection/child_classification/UTKFace
 /Human_keypointdetection/child_classification/*.pth
 /Human_keypointdetection/child_classification/*.pt
+/Human_keypointdetection/child_classification/*.mp4
+/Human_keypointdetection/gender_classification/datasets
+/Human_keypointdetection/gender_classification/*.pth
+
 
 /Car_wheel_segmentation/.venv
-/Car_wheel_segmentation/datasets
-/Car_wheel_segmentation/runs
-
-/Car_wheel_segmentation/*.pt
+/Car_wheel_segmentation/Car_part_segmentation/datasets
+/Car_wheel_segmentation/Car_part_segmentation/runs
+/Car_wheel_segmentation/Car_part_segmentation/*.pt

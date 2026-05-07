@@ -1,0 +1,40 @@
+from ultralytics import YOLO
+
+if __name__ == "__main__":
+    # ── 모델 로드 ──────────────────────────────────────────────────────
+    # nano / small / medium 중 선택 (n < s < m, 크기/정확도 트레이드오프)
+    model = YOLO("yolo11n.pt")
+
+    # ── 학습 ──────────────────────────────────────────────────────────
+    results = model.train(
+        data="datasets\data.yaml",  
+        epochs=500,
+        imgsz=1280,
+        batch=2,                    # GPU 메모리 부족 시 8로 낮추기
+        device=0,                    # GPU 0번 사용 (CPU는 "cpu")
+        project="runs",
+        name="train",
+        exist_ok=True,
+
+        # ── 데이터 증강 ──────────────────────────────────────────────
+        hsv_h=0.015,      # Hue 변화 (색조)
+        hsv_s=0.7,        # Saturation 변화 (채도)
+        hsv_v=0.4,        # Value 변화 (명도)
+        degrees=10.0,     # 회전 (-10 ~ +10도)
+        translate=0.1,    # 이동 (이미지 크기의 10%)
+        scale=0.5,        # 스케일 변화 (0.5 ~ 1.5배)
+        shear=2.0,        # 기울이기
+        flipud=0.3,       # 상하 반전 확률
+        fliplr=0.5,       # 좌우 반전 확률
+        mosaic=1.0,       # Mosaic 증강 (4장 합치기)
+        # ─────────────────────────────────────────────────────────────
+    )
+
+    print("학습 완료:", results)
+
+
+    # ── 검증 ──────────────────────────────────────────────────────────
+    metrics = model.val()
+    print(f"mAP50      : {metrics.box.map50:.4f}")
+    print(f"mAP50-95   : {metrics.box.map:.4f}")
+

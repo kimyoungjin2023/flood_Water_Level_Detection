@@ -7,13 +7,13 @@
 
 ### 원래 생각
 ```
-사람 감지
+사람 감지(YOLO11n)
     │
     ▼
 성별 분류 → 남(174cm) / 여(160.5cm) 기준키 설정
     │
     ▼
-Keypoint로 전신 픽셀 높이 계산
+Keypoint로 전신 픽셀 높이 계산(YOLO11n-Pose)
 (머리 top ~ 발목 bottom)
     │
     ▼
@@ -28,16 +28,16 @@ Keypoint로 전신 픽셀 높이 계산
 
 ### 변경된 생각
 ```
-사람 감지
+사람 감지(YOLO11n)
     │
     ▼
-어린이 분류 - 어린이 키에 대허서(문헌조사) - 추가
+어린이 분류(어린이 사용 X)(EfficientNet-B0)
     │
     ▼
-성별 분류 → 남(174cm) / 여(160.5cm) 기준키 설정
+성별 분류 → 남(174cm) / 여(160.5cm) 기준키 설정(EfficientNet-B0)
     │
     ▼
-Keypoint로 전신 픽셀 높이 계산
+Keypoint로 전신 픽셀 높이 계산(YOLO11n-Pose)
 (머리 top ~ 발목 bottom)
     │
     ▼
